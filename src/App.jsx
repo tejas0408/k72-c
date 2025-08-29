@@ -1,23 +1,21 @@
-import React from 'react'
-
+import { Route, Routes } from 'react-router-dom'
+import Home from './pages/Home'
 import Agence from './pages/agence'
-import Home from './pages/home'
-import Projects from './pages/projects'
-import {  Router, Routes, Route, Link } from "react-router-dom";
-
+import Projects from './pages/Projects'
+import Navbar from './components/navigation/navbar'
+import FullScreenNav from './components/navigation/FullScreenNav'
 
 
 const App = () => {
   return (
-    <div className=' text-white'>
-      <Link></Link>
-
-    <Routes>
-      <Route path = '/' element = {<Home/>} />
-      <Route path = '/agence' element = {<Agence/>} />
-      <Route path = '/projects' element = {<Projects/>}/>
-
-    </Routes>
+    <div className='overflow-x-hidden'>
+      <Navbar />
+      <FullScreenNav />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/agence' element={<Agence />} />
+        <Route path='/projects' element={<Projects />} />
+      </Routes>
     </div>
   )
 }
